@@ -1,0 +1,50 @@
+﻿<Page x:Class="MovieManageMent.Pages.MovieSearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:MovieManageMent.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      
+      Title="MovieSearchPage">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"  ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderThickness="0" Margin="1" BorderBrush="Black" Padding="5" >
+            
+        </Border>
+        <TextBlock VerticalAlignment="Center">영화조회(api):</TextBlock>
+        <TextBox Text="{Binding MovieSearchGetQueryUrl.curPage}" Width="100"
+                 BorderThickness="1"
+               materialDesign:HintAssist.Hint="페이지" HorizontalAlignment="Left"  Margin="115,0,0,0" >
+            
+        </TextBox>
+        <TextBox Text="{Binding MovieSearchGetQueryUrl.itemPerPage}" Width="100"
+               BorderThickness="1"
+               materialDesign:HintAssist.Hint="페이지별갯수" HorizontalAlignment="Left" Margin="215,0,0,0" >
+        </TextBox>
+        <Button Content="조회" HorizontalAlignment="Left" Margin="350,0,0,0" Click="Button_Click" >
+            
+        </Button>
+        <Button Content="연속조회" HorizontalAlignment="Left" Margin="420,0,0,0" Click="Button_Click2" >
+            
+        </Button>
+        <Border BorderThickness="1" Grid.Row="1" Grid.RowSpan="2">
+            
+            
+            <DataGrid  materialDesign:DataGridAssist.ColumnHeaderPadding="1"
+                       Grid.Row="1" Grid.RowSpan="2" Padding="3,3,3,3" BorderThickness="1"
+                      ItemsSource="{Binding Movies }">
+            
+            </DataGrid>
+        </Border>
+        
+    </Grid>
+    
+</Page>

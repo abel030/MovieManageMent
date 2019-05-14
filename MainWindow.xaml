@@ -3,10 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"   
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Background="{DynamicResource MaterialDesignPaper}"
         xmlns:local="clr-namespace:MovieManageMent"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="영화진흥위" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Api데이터조회(Web)" >
+                <MenuItem Header="영화명조회" Click="MenuItem_Click" />
+                <MenuItem Header="영화인조회" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="데이터베이스조회" >
+                <MenuItem Header="영화명조회" />
+                <MenuItem Header="영화인조회" />
+            </MenuItem>
+        </Menu>
+
+        <Frame Margin="5" Padding="5" Grid.Row="1" x:Name="y_frame" Source="Pages\MovieSearchPage.xaml" BorderBrush="{DynamicResource PrimaryHueDarkBrush }" BorderThickness="2">
+            
+        </Frame>
     </Grid>
 </Window>
